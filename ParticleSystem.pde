@@ -4,13 +4,16 @@ class ParticleSystem {
 
   ParticleSystem() {
     switch (mode) {
-      case 0:
+    case 0:
       genRate = 10;
       break;
-      case 1:
+    case 1:
       genRate = 50;
       break;
-      case 2:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
       genRate = 1;
     }
     particles = new ArrayList<Particle>();
