@@ -39,7 +39,7 @@ class Particle {
     case 4:
       maxLife = 500;
       acceleration = new PVector(0, 0.05);
-      velocity = new PVector(2, -2);
+      velocity = new PVector(random(1, 2.5), random(-2.5, -1));
       origin = new PVector(width/4, height/5);
       position = origin.get();
       position.add(randomPointOnDisk());
@@ -95,7 +95,7 @@ class Particle {
         velocity.y *= -0.4;
         break;
       case 2:
-        velocity.y *= random(-0.4, 0.4);
+        velocity.y *= -random(0.5, 1.5);
         break;
       case 5:
         velocity.y = 0;
