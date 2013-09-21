@@ -84,7 +84,12 @@ class Particle {
       } 
       break;
     }
-
+    if (mouseMode && dist(position.x, position.y, mouseX, mouseY) < 20) {
+      velocity.x *= -1;
+      velocity.y *= -1;
+      position.x += velocity.x;
+      position.y += velocity.y;
+    }
     if (position.x > objPosition.x && position.x < (objPosition.x + objSize.x) && position.y > objPosition.y && position.y < (objPosition.y + objSize.y)) {
       position.y = objPosition.y;
       switch(mode) {

@@ -4,6 +4,7 @@ long startTime;
 int fadetime;
 PVector objPosition;
 PVector objSize;
+boolean mouseMode = false;
 
 void setup() {
   frameRate(60);
@@ -66,6 +67,9 @@ void drawModeTabs() {
 
   fill(mode == 5? 120 : 255);
   ellipse(40, 240, 15, 15);
+  
+  fill(mouseMode? 120 : 255);
+  ellipse(40, 300, 15, 15);
 }
 
 void mousePressed() {
@@ -108,6 +112,12 @@ void mousePressed() {
     if (mode != 5) {
       mode = 5;
       redraw();
+    }
+  }
+  
+  if (25 <= mouseX && mouseX <= 45 && 285 <= mouseY && mouseY <= 335) {
+    if (mode != 5) {
+      mouseMode = !mouseMode;
     }
   }
 }
